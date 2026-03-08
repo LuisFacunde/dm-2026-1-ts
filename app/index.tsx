@@ -1,6 +1,7 @@
 import { SectionListExample } from "@/components/SectionListExample";
 import { useState } from "react";
 import { StyleSheet, Switch, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 // import { PizzaTranslator } from "@/components/PizzaTranslator";
 // import { FlatListExample } from "@/components/FlatListExample";
@@ -29,16 +30,18 @@ export default function Index() {
     );
   }
   return (
-    <View style={{ flex: 1, alignItems: "center" }}>
-      <Switch
-        trackColor={{ false: "#767577", true: "#81b0ff" }}
-        thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
-      {MyComponent}
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1, alignItems: "center" }}>
+        <Switch
+          trackColor={{ false: "#767577", true: "#81b0ff" }}
+          thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+          ios_backgroundColor="#3e3e3e"
+          onValueChange={toggleSwitch}
+          value={isEnabled}
+        />
+        {MyComponent}
+      </View>
+    </SafeAreaView>
   );
 }
 
