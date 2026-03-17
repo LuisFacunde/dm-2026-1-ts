@@ -1,4 +1,4 @@
-import { Header } from "@/components/Header"; // 👈
+import { Header } from "@/components/Header";
 import { SectionListExample } from "@/components/SectionListExample";
 import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -30,11 +30,7 @@ export default function Index() {
         <SafeAreaView
             style={{ flex: 1, backgroundColor: isDark ? "#0F172A" : "#F8FAFC" }}
         >
-            <Header
-                isDark={isDark}
-                onToggleTheme={setIsDark}
-                isLoading={isEnabled}
-            />
+            <Header isDark={isDark} onToggleTheme={setIsDark} />
 
             <View style={{ flex: 1, alignItems: "center" }}>{MyComponent}</View>
         </SafeAreaView>

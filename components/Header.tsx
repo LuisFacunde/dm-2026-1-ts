@@ -9,8 +9,8 @@ export function Header({
     isDark: boolean;
     onToggleTheme: (value: boolean) => void;
 }) {
-    const textColor = isDark ? "#F1F5F9" : "#1E293B";
-    const backgroundColor = isDark ? "#1E293B" : "#FFFFFF";
+    const textColor = isDark ? "#F1F5F9" : "#000000";
+    const backgroundColor = isDark ? "#1b263b" : "#FFFFFF";
 
     return (
         <View style={[styles.container, { backgroundColor }]}>

@@ -10,10 +10,10 @@ export function ThemeSwitch({
 }) {
     return (
         <Switch
-            value={isDark}
+            trackColor={{ false: "#767577", true: "#81b0ff" }}
+            thumbColor="#f4f3f4"
             onValueChange={onToggle}
-            trackColor={{ false: "#CBD5E1", true: "#3B82F6" }}
-            thumbColor="#FFFFFF"
+            value={isDark}
         />
     );
 }
