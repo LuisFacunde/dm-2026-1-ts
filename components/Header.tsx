@@ -9,14 +9,15 @@ export function Header({
     isDark: boolean;
     onToggleTheme: (value: boolean) => void;
 }) {
-    const textColor = isDark ? "#F1F5F9" : "#000000";
-    const backgroundColor = isDark ? "#1b263b" : "#FFFFFF";
+    const textColor = isDark ? "#e0f2fe" : "#1e3a8a"; 
+    const backgroundColor = isDark ? "#0f172a" : "#ffffff";
+    const borderColor = isDark ? "#1e293b" : "#bfdbfe";
 
     return (
-        <View style={[styles.container, { backgroundColor }]}>
+        <View style={[styles.container, { backgroundColor, borderBottomColor: borderColor }]}>
             <ActivityIndicator
                 size="small"
-                color={isDark ? "skyblue" : "blue"}
+                color={isDark ? "#7dd3fc" : "#2563eb"}
                 style={styles.icon}
             />
 

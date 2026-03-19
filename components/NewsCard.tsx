@@ -1,5 +1,6 @@
 import { NewsItem } from "@/data/newsItem";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 type NewsCardProps = {
     isDark: boolean;
@@ -7,20 +8,24 @@ type NewsCardProps = {
 }
 
 export function NewsCard({ isDark, news }: NewsCardProps) {
-    const titleColor = isDark ? "white" : "black";
-    const descriptionColor = isDark ? "#ccc" : "#666";
-    const backgroundColor = isDark ? "#333" : "#fff";
-    const borderColor = isDark ? "#555" : "#ddd";
+    const titleColor = isDark ? "#ffffff" : "#1e3a8a";
+    const descriptionColor = isDark ? "#93c5fd" : "#3b82f6";
+    const backgroundColor = isDark ? "#0f172a" : "#ffffff";
+    const borderColor = isDark ? "#1e293b" : "#bfdbfe";
+    const iconColor = isDark ? "#bfdbfe" : "#2563eb";
+    const iconBgColor = isDark ? "#1e293b" : "#eff6ff";
 
     return (
         <View style={[styles.container, { backgroundColor, borderColor }]}>
-            <Image source={{ uri: news.image }} style={styles.image} />
+            <View style={[styles.iconContainer, { backgroundColor: iconBgColor }]}>
+                <MaterialIcons name={news.icon} size={40} color={iconColor} />
+            </View>
             <View style={styles.content}>
                 <Text style={[styles.title, { color: titleColor }]} numberOfLines={2}>
                     {news.title}
                 </Text>
-                <Text style={[styles.description, { color: descriptionColor }]} numberOfLines={3}>
-                    {news.description}
+                <Text style={[styles.description, { color: descriptionColor }]} numberOfLines={1}>
+                    {news.date} às {news.time}
                 </Text>
             </View>
         </View>
@@ -41,12 +46,13 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 2,
     },
-    image: {
+    iconContainer: {
         width: 80,
         height: 80,
         borderRadius: 6,
         marginRight: 12,
-        backgroundColor: '#eee',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     content: {
         flex: 1,

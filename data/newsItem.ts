@@ -1,39 +1,61 @@
+import { MaterialIcons } from '@expo/vector-icons';
+
 export type NewsItem = {
     id: number;
     title: string;
-    description: string;
-    image: string;
+    date: string;
+    time: string;
+    icon: keyof typeof MaterialIcons.glyphMap;
 }
 
-export const NEWS_ITEM = [
+export const NEWS_ITEM: NewsItem[] = [
     {
         id: 1,
-        title: "Notícia 1",
-        description: "Descrição da notícia 1",
-        image: "https://reactnative.dev/img/tiny_logo.png",
+        title: "Expo SDK 54 é lançado com suporte ao React Compiler",
+        date: "19/03/2026",
+        time: "09:00",
+        icon: "smartphone",
     },
     {
         id: 2,
-        title: "Notícia 2",
-        description: "Descrição da notícia 2",
-        image: "https://reactnative.dev/img/tiny_logo.png",
+        title: "React Native 0.81 traz melhorias significativas na Nova Arquitetura",
+        date: "18/03/2026",
+        time: "14:30",
+        icon: "architecture",
     },
     {
         id: 3,
-        title: "Notícia 3",
-        description: "Descrição da notícia 3",
-        image: "https://reactnative.dev/img/tiny_logo.png",
+        title: "Novos recursos incríveis do TypeScript 5.9 que você precisa conhecer",
+        date: "16/03/2026",
+        time: "11:15",
+        icon: "code",
     },
     {
         id: 4,
-        title: "Notícia 4",
-        description: "Descrição da notícia 4",
-        image: "https://reactnative.dev/img/tiny_logo.png",
+        title: "Como construir aplicativos mobile mais acessíveis e performáticos",
+        date: "15/03/2026",
+        time: "16:45",
+        icon: "accessibility-new",
     },
     {
         id: 5,
-        title: "Notícia 5",
-        description: "Descrição da notícia 5",
-        image: "https://reactnative.dev/img/tiny_logo.png",
-    }
-] as const;
+        title: "Assistentes de IA estão transformando o desenvolvimento de software",
+        date: "14/03/2026",
+        time: "08:20",
+        icon: "smart-toy",
+    },
+    {
+        id: 6,
+        title: "Nova falha de segurança expõe milhares de servidores na nuvem",
+        date: "13/03/2026",
+        time: "07:45",
+        icon: "security",
+    },
+    {
+        id: 7,
+        title: "Frameworks Serverless ganham popularidade entre startups",
+        date: "12/03/2026",
+        time: "15:10",
+        icon: "cloud",
+    },
+];
