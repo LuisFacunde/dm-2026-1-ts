@@ -1,8 +1,8 @@
 import { Header } from "@/components/Header";
 import { NewsCard } from "@/components/NewsCard";
-import { NEWS_ITEM } from "@/data/newsItem";
+import { NEWS_ITEM } from "@/data/NewsItem";
 import { useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { Button, FlatList, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -22,14 +22,29 @@ export default function Index() {
                     contentContainerStyle={{ paddingBottom: 16 }}
                 />
             </View>
+            <View style={[styles.footer, { borderTopColor: isDark ? "#1e293b" : "#E2E8F0", backgroundColor: isDark ? "#0f172a" : "#ffffff" }]} >
+                <Text style={[styles.footerText, { color: isDark ? "#80ed99" : "#008000" }]}>Atualização concluída!</Text> 
+                <View style={styles.footerButton}>
+                    <Button title="Voltar" onPress={() => { }} />
+                </View>
+            </View>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
-    title: {
-        fontSize: 34,
-        fontWeight: "bold",
-        color: "blue",
+    footer: {
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 16,
+        borderTopWidth: 1,
+    },
+    footerText: {
+        fontSize: 16,
+        fontWeight: "600",
+    },
+    footerButton: {
+        marginTop: 16,
+        width: "110%",
     },
 });

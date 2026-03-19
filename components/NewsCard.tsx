@@ -1,6 +1,6 @@
-import { NewsItem } from "@/data/newsItem";
-import { StyleSheet, Text, View } from "react-native";
+import { NewsItem } from "@/data/NewsItem";
 import { MaterialIcons } from "@expo/vector-icons";
+import { StyleSheet, Text, View } from "react-native";
 
 type NewsCardProps = {
     isDark: boolean;
